@@ -312,3 +312,7 @@ Proof.
       * apply Weakm with A'; assumption.
 Qed.
 
+
+(* Q 2.3.c *)
+Lemma completness A s : (forall M w, ctx_winterp M w A -> winterp M w s) -> A ⊢m s.
+Proof.
