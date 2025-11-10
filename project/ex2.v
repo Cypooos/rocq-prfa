@@ -312,7 +312,22 @@ Proof.
       * apply Weakm with A'; assumption.
 Qed.
 
-
 (* Q 2.3.c *)
+Lemma wmodel_incl A A': incl A A' -> ctx_winterp syntatic_model A' A.
+Proof.
+  induction A as [| x l Hl].
+  - constructor.
+  - split.
+    + apply correctness. apply ndm_ax. firstorder.
+    + apply Hl. firstorder.
+Qed. 
+
 Lemma completness A s : (forall M w, ctx_winterp M w A -> winterp M w s) -> A ⊢m s.
 Proof.
+  intros H.
+  specialize H with syntatic_model A.
+  apply correctness.
+  apply H.
+  apply wmodel_incl.
+  apply incl_refl.
+Qed. 
