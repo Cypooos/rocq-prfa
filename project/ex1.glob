@@ -1,0 +1,372 @@
+DIGEST 8f960874c4a41fdf287ec1bf10bd0769
+Fproject_coda_BOUROTTE.ex1
+R27:30 Stdlib.Lists.List <> <> lib
+R40:52 Stdlib.Lists.List ListNotations <> mod
+ind 66:69 <> form
+constr 83:85 <> var
+constr 100:102 <> bot
+constr 106:108 <> imp
+R93:95 Corelib.Init.Datatypes <> nat ind
+binder 89:89 <> x:3
+R118:121 project_coda_BOUROTTE.ex1 <> form:1 ind
+binder 112:112 <> s:4
+binder 114:114 <> t:5
+scheme 66:69 <> form_rect
+scheme 66:69 <> form_ind
+scheme 66:69 <> form_rec
+scheme 66:69 <> form_sind
+R170:172 project_coda_BOUROTTE.ex1 <> imp constr
+not 157:157 <> :::x_'~>'_x
+abbrev 225:227 <> neg
+R236:238 project_coda_BOUROTTE.ex1 <> imp constr
+R242:244 project_coda_BOUROTTE.ex1 <> bot constr
+ind 317:319 <> ndc
+constr 356:361 <> ndc_ax
+constr 421:429 <> ndc_imp_i
+constr 505:513 <> ndc_imp_e
+constr 595:601 <> ndc_abs
+R332:335 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R323:326 Corelib.Init.Datatypes <> list ind
+R328:331 project_coda_BOUROTTE.ex1 <> form ind
+R340:343 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R336:339 project_coda_BOUROTTE.ex1 <> form ind
+R374:377 Corelib.Init.Datatypes <> list ind
+R379:382 project_coda_BOUROTTE.ex1 <> form ind
+binder 372:372 <> l:8
+R394:397 project_coda_BOUROTTE.ex1 <> form ind
+binder 392:392 <> a:9
+R406:409 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R400:401 Stdlib.Lists.List <> In def
+R405:405 project_coda_BOUROTTE.ex1 <> l:8 var
+R403:403 project_coda_BOUROTTE.ex1 <> a:9 var
+R410:412 project_coda_BOUROTTE.ex1 <> ndc:6 ind
+R416:416 project_coda_BOUROTTE.ex1 <> a:9 var
+R414:414 project_coda_BOUROTTE.ex1 <> l:8 var
+R442:445 Corelib.Init.Datatypes <> list ind
+R447:450 project_coda_BOUROTTE.ex1 <> form ind
+binder 440:440 <> l:10
+R464:467 project_coda_BOUROTTE.ex1 <> form ind
+binder 460:460 <> s:11
+binder 462:462 <> t:12
+R482:485 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R470:472 project_coda_BOUROTTE.ex1 <> ndc:6 ind
+R481:481 project_coda_BOUROTTE.ex1 <> t:12 var
+R476:477 Corelib.Init.Datatypes <> ::list_scope:x_'::'_x not
+R475:475 project_coda_BOUROTTE.ex1 <> s:11 var
+R478:478 project_coda_BOUROTTE.ex1 <> l:10 var
+R486:488 project_coda_BOUROTTE.ex1 <> ndc:6 ind
+R493:495 project_coda_BOUROTTE.ex1 <> imp constr
+R497:497 project_coda_BOUROTTE.ex1 <> s:11 var
+R499:499 project_coda_BOUROTTE.ex1 <> t:12 var
+R490:490 project_coda_BOUROTTE.ex1 <> l:10 var
+R526:529 Corelib.Init.Datatypes <> list ind
+R531:534 project_coda_BOUROTTE.ex1 <> form ind
+binder 524:524 <> l:13
+R548:551 project_coda_BOUROTTE.ex1 <> form ind
+binder 544:544 <> s:14
+binder 546:546 <> t:15
+R561:564 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R554:556 project_coda_BOUROTTE.ex1 <> ndc:6 ind
+R560:560 project_coda_BOUROTTE.ex1 <> s:14 var
+R558:558 project_coda_BOUROTTE.ex1 <> l:13 var
+R580:583 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R565:567 project_coda_BOUROTTE.ex1 <> ndc:6 ind
+R572:574 project_coda_BOUROTTE.ex1 <> imp constr
+R576:576 project_coda_BOUROTTE.ex1 <> s:14 var
+R578:578 project_coda_BOUROTTE.ex1 <> t:15 var
+R569:569 project_coda_BOUROTTE.ex1 <> l:13 var
+R584:586 project_coda_BOUROTTE.ex1 <> ndc:6 ind
+R590:590 project_coda_BOUROTTE.ex1 <> t:15 var
+R588:588 project_coda_BOUROTTE.ex1 <> l:13 var
+R614:617 Corelib.Init.Datatypes <> list ind
+R619:622 project_coda_BOUROTTE.ex1 <> form ind
+binder 612:612 <> l:16
+R634:637 project_coda_BOUROTTE.ex1 <> form ind
+binder 632:632 <> s:17
+R660:663 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R640:642 project_coda_BOUROTTE.ex1 <> ndc:6 ind
+R657:659 project_coda_BOUROTTE.ex1 <> bot constr
+R645:645 Corelib.Init.Datatypes <> ::list_scope:x_'::'_x not
+R651:653 Corelib.Init.Datatypes <> ::list_scope:x_'::'_x not
+R646:648 project_coda_BOUROTTE.ex1 <> neg abbrev
+R650:650 project_coda_BOUROTTE.ex1 <> s:17 var
+R654:654 project_coda_BOUROTTE.ex1 <> l:16 var
+R664:666 project_coda_BOUROTTE.ex1 <> ndc:6 ind
+R670:670 project_coda_BOUROTTE.ex1 <> s:17 var
+R668:668 project_coda_BOUROTTE.ex1 <> l:16 var
+scheme 317:319 <> ndc_ind
+scheme 317:319 <> ndc_sind
+R698:700 project_coda_BOUROTTE.ex1 <> ndc ind
+not 683:683 <> :::x_'⊢c'_x
+prf 729:730 <> id
+R735:738 Corelib.Init.Datatypes <> list ind
+R740:743 project_coda_BOUROTTE.ex1 <> form ind
+binder 733:733 <> A:18
+R749:752 project_coda_BOUROTTE.ex1 <> form ind
+binder 747:747 <> s:19
+R758:763 project_coda_BOUROTTE.ex1 <> :::x_'⊢c'_x not
+R757:757 project_coda_BOUROTTE.ex1 <> A:18 var
+R765:768 project_coda_BOUROTTE.ex1 <> :::x_'~>'_x not
+R764:764 project_coda_BOUROTTE.ex1 <> s:19 var
+R769:769 project_coda_BOUROTTE.ex1 <> s:19 var
+R789:797 project_coda_BOUROTTE.ex1 <> ndc_imp_i constr
+R789:797 project_coda_BOUROTTE.ex1 <> ndc_imp_i constr
+R810:815 project_coda_BOUROTTE.ex1 <> ndc_ax constr
+R810:815 project_coda_BOUROTTE.ex1 <> ndc_ax constr
+prf 853:859 <> dbl_neg
+R864:867 Corelib.Init.Datatypes <> list ind
+R869:872 project_coda_BOUROTTE.ex1 <> form ind
+binder 862:862 <> A:20
+R878:881 project_coda_BOUROTTE.ex1 <> form ind
+binder 876:876 <> s:21
+R890:895 project_coda_BOUROTTE.ex1 <> :::x_'⊢c'_x not
+R887:888 Corelib.Init.Datatypes <> ::list_scope:x_'::'_x not
+R886:886 project_coda_BOUROTTE.ex1 <> s:21 var
+R889:889 project_coda_BOUROTTE.ex1 <> A:20 var
+R896:898 project_coda_BOUROTTE.ex1 <> neg abbrev
+R901:903 project_coda_BOUROTTE.ex1 <> neg abbrev
+R905:905 project_coda_BOUROTTE.ex1 <> s:21 var
+R926:934 project_coda_BOUROTTE.ex1 <> ndc_imp_i constr
+R926:934 project_coda_BOUROTTE.ex1 <> ndc_imp_i constr
+R947:955 project_coda_BOUROTTE.ex1 <> ndc_imp_e constr
+R947:955 project_coda_BOUROTTE.ex1 <> ndc_imp_e constr
+R987:992 project_coda_BOUROTTE.ex1 <> ndc_ax constr
+R987:992 project_coda_BOUROTTE.ex1 <> ndc_ax constr
+R987:992 project_coda_BOUROTTE.ex1 <> ndc_ax constr
+prf 1061:1071 <> dbl_neg_bot
+R1076:1079 Corelib.Init.Datatypes <> list ind
+R1081:1084 project_coda_BOUROTTE.ex1 <> form ind
+binder 1074:1074 <> A:22
+R1107:1112 project_coda_BOUROTTE.ex1 <> :::x_'⊢c'_x not
+R1102:1105 Corelib.Init.Datatypes <> ::list_scope:x_'::'_x not
+R1089:1091 project_coda_BOUROTTE.ex1 <> neg abbrev
+R1094:1096 project_coda_BOUROTTE.ex1 <> neg abbrev
+R1098:1100 project_coda_BOUROTTE.ex1 <> bot constr
+R1106:1106 project_coda_BOUROTTE.ex1 <> A:22 var
+R1113:1115 project_coda_BOUROTTE.ex1 <> bot constr
+R1156:1158 project_coda_BOUROTTE.ex1 <> neg abbrev
+R1160:1162 project_coda_BOUROTTE.ex1 <> bot constr
+R1135:1143 project_coda_BOUROTTE.ex1 <> ndc_imp_e constr
+R1156:1158 project_coda_BOUROTTE.ex1 <> neg abbrev
+R1160:1162 project_coda_BOUROTTE.ex1 <> bot constr
+R1135:1143 project_coda_BOUROTTE.ex1 <> ndc_imp_e constr
+R1179:1184 project_coda_BOUROTTE.ex1 <> ndc_ax constr
+R1179:1184 project_coda_BOUROTTE.ex1 <> ndc_ax constr
+R1211:1212 project_coda_BOUROTTE.ex1 <> id thm
+R1211:1212 project_coda_BOUROTTE.ex1 <> id thm
+prf 1240:1244 <> Weakc
+binder 1246:1246 <> A:23
+binder 1248:1248 <> B:24
+binder 1250:1250 <> s:25
+R1262:1265 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1255:1260 project_coda_BOUROTTE.ex1 <> :::x_'⊢c'_x not
+R1254:1254 project_coda_BOUROTTE.ex1 <> A:23 var
+R1261:1261 project_coda_BOUROTTE.ex1 <> s:25 var
+R1274:1277 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1266:1269 Stdlib.Lists.List <> incl def
+R1273:1273 project_coda_BOUROTTE.ex1 <> B:24 var
+R1271:1271 project_coda_BOUROTTE.ex1 <> A:23 var
+R1279:1284 project_coda_BOUROTTE.ex1 <> :::x_'⊢c'_x not
+R1278:1278 project_coda_BOUROTTE.ex1 <> B:24 var
+R1285:1285 project_coda_BOUROTTE.ex1 <> s:25 var
+R1428:1433 project_coda_BOUROTTE.ex1 <> ndc_ax constr
+R1428:1433 project_coda_BOUROTTE.ex1 <> ndc_ax constr
+R1487:1495 project_coda_BOUROTTE.ex1 <> ndc_imp_i constr
+R1487:1495 project_coda_BOUROTTE.ex1 <> ndc_imp_i constr
+R1541:1541 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R1543:1543 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R1553:1553 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R1555:1555 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R1516:1527 Stdlib.Lists.List <> incl_app_app thm
+R1541:1541 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R1543:1543 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R1553:1553 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R1555:1555 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R1516:1527 Stdlib.Lists.List <> incl_app_app thm
+R1573:1581 Stdlib.Lists.List <> incl_refl thm
+R1573:1581 Stdlib.Lists.List <> incl_refl thm
+R1634:1642 project_coda_BOUROTTE.ex1 <> ndc_imp_e constr
+R1634:1642 project_coda_BOUROTTE.ex1 <> ndc_imp_e constr
+R1752:1758 project_coda_BOUROTTE.ex1 <> ndc_abs constr
+R1752:1758 project_coda_BOUROTTE.ex1 <> ndc_abs constr
+R1802:1802 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R1808:1808 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R1803:1805 project_coda_BOUROTTE.ex1 <> neg abbrev
+R1818:1818 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R1824:1824 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R1819:1821 project_coda_BOUROTTE.ex1 <> neg abbrev
+R1777:1788 Stdlib.Lists.List <> incl_app_app thm
+R1802:1802 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R1808:1808 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R1803:1805 project_coda_BOUROTTE.ex1 <> neg abbrev
+R1818:1818 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R1824:1824 Stdlib.Lists.List ListNotations ::list_scope:'['_x_']' not
+R1819:1821 project_coda_BOUROTTE.ex1 <> neg abbrev
+R1777:1788 Stdlib.Lists.List <> incl_app_app thm
+R1842:1850 Stdlib.Lists.List <> incl_refl thm
+R1842:1850 Stdlib.Lists.List <> incl_refl thm
+def 1903:1908 <> ground
+R1913:1916 project_coda_BOUROTTE.ex1 <> form ind
+binder 1911:1911 <> s:26
+R1935:1935 project_coda_BOUROTTE.ex1 <> s:26 var
+R1995:1997 project_coda_BOUROTTE.ex1 <> var constr
+R2004:2008 Corelib.Init.Logic <> False ind
+R2013:2015 project_coda_BOUROTTE.ex1 <> bot constr
+R2020:2023 Corelib.Init.Logic <> True ind
+R2028:2030 project_coda_BOUROTTE.ex1 <> imp constr
+R2047:2050 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R2039:2044 project_coda_BOUROTTE.ex1 <> ground:27 def
+R2051:2056 project_coda_BOUROTTE.ex1 <> ground:27 def
+def 2095:2099 <> model
+R2107:2110 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2104:2106 Corelib.Init.Datatypes <> nat ind
+def 2141:2146 <> interp
+R2151:2155 project_coda_BOUROTTE.ex1 <> model def
+binder 2149:2149 <> m:29
+R2161:2164 project_coda_BOUROTTE.ex1 <> form ind
+binder 2159:2159 <> x:30
+R2183:2183 project_coda_BOUROTTE.ex1 <> x:30 var
+R2194:2196 project_coda_BOUROTTE.ex1 <> bot constr
+R2201:2205 Corelib.Init.Logic <> False ind
+R2210:2212 project_coda_BOUROTTE.ex1 <> var constr
+R2219:2219 project_coda_BOUROTTE.ex1 <> m:29 var
+R2226:2228 project_coda_BOUROTTE.ex1 <> imp constr
+R2247:2250 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2237:2242 project_coda_BOUROTTE.ex1 <> interp:31 def
+R2244:2244 project_coda_BOUROTTE.ex1 <> m:29 var
+R2251:2256 project_coda_BOUROTTE.ex1 <> interp:31 def
+R2258:2258 project_coda_BOUROTTE.ex1 <> m:29 var
+def 2291:2300 <> ctx_interp
+R2305:2309 project_coda_BOUROTTE.ex1 <> model def
+binder 2303:2303 <> m:33
+R2315:2318 Corelib.Init.Datatypes <> list ind
+R2320:2323 project_coda_BOUROTTE.ex1 <> form ind
+binder 2313:2313 <> l:34
+R2342:2342 project_coda_BOUROTTE.ex1 <> l:34 var
+R2353:2354 Stdlib.Lists.List ListNotations ::list_scope:'['_']' not
+R2359:2362 Corelib.Init.Logic <> True ind
+R2368:2369 Corelib.Init.Datatypes <> ::list_scope:x_'::'_x not
+R2386:2389 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R2376:2381 project_coda_BOUROTTE.ex1 <> interp def
+R2383:2383 project_coda_BOUROTTE.ex1 <> m:33 var
+R2390:2399 project_coda_BOUROTTE.ex1 <> ctx_interp:35 def
+R2401:2401 project_coda_BOUROTTE.ex1 <> m:33 var
+prf 2501:2506 <> in_hyp
+R2512:2516 project_coda_BOUROTTE.ex1 <> model def
+binder 2509:2509 <> M:37
+R2524:2527 project_coda_BOUROTTE.ex1 <> form ind
+binder 2520:2520 <> a:38
+R2533:2536 Corelib.Init.Datatypes <> list ind
+R2538:2541 project_coda_BOUROTTE.ex1 <> form ind
+binder 2531:2531 <> l:39
+R2552:2555 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2546:2547 Stdlib.Lists.List <> In def
+R2551:2551 project_coda_BOUROTTE.ex1 <> l:39 var
+R2549:2549 project_coda_BOUROTTE.ex1 <> a:38 var
+R2570:2573 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2556:2565 project_coda_BOUROTTE.ex1 <> ctx_interp def
+R2567:2567 project_coda_BOUROTTE.ex1 <> M:37 var
+R2569:2569 project_coda_BOUROTTE.ex1 <> l:39 var
+R2574:2579 project_coda_BOUROTTE.ex1 <> interp def
+R2581:2581 project_coda_BOUROTTE.ex1 <> M:37 var
+R2583:2583 project_coda_BOUROTTE.ex1 <> a:38 var
+R2663:2668 Stdlib.Lists.List <> in_nil thm
+R2663:2668 Stdlib.Lists.List <> in_nil thm
+prf 2852:2860 <> soundness
+binder 2862:2862 <> M:40
+binder 2864:2864 <> A:41
+R2872:2875 project_coda_BOUROTTE.ex1 <> form ind
+binder 2868:2868 <> s:42
+R2880:2880 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2899:2903 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+binder 2888:2888 <> P:43
+R2894:2897 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2891:2891 Corelib.Init.Logic <> ::type_scope:'~'_x not
+R2892:2892 Corelib.Init.Logic <> ::type_scope:'~'_x not
+R2893:2893 project_coda_BOUROTTE.ex1 <> P:43 var
+R2898:2898 project_coda_BOUROTTE.ex1 <> P:43 var
+R2912:2915 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2905:2910 project_coda_BOUROTTE.ex1 <> :::x_'⊢c'_x not
+R2904:2904 project_coda_BOUROTTE.ex1 <> A:41 var
+R2911:2911 project_coda_BOUROTTE.ex1 <> s:42 var
+R2930:2933 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2916:2925 project_coda_BOUROTTE.ex1 <> ctx_interp def
+R2927:2927 project_coda_BOUROTTE.ex1 <> M:40 var
+R2929:2929 project_coda_BOUROTTE.ex1 <> A:41 var
+R2934:2939 project_coda_BOUROTTE.ex1 <> interp def
+R2941:2941 project_coda_BOUROTTE.ex1 <> M:40 var
+R2943:2943 project_coda_BOUROTTE.ex1 <> s:42 var
+R3053:3058 project_coda_BOUROTTE.ex1 <> in_hyp thm
+R3053:3058 project_coda_BOUROTTE.ex1 <> in_hyp thm
+prf 3312:3332 <> classical_consistency
+R3336:3337 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3356:3360 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+binder 3345:3345 <> P:44
+R3351:3354 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3348:3348 Corelib.Init.Logic <> ::type_scope:'~'_x not
+R3349:3349 Corelib.Init.Logic <> ::type_scope:'~'_x not
+R3350:3350 project_coda_BOUROTTE.ex1 <> P:44 var
+R3355:3355 project_coda_BOUROTTE.ex1 <> P:44 var
+R3361:3362 Corelib.Init.Logic <> ::type_scope:'~'_x not
+R3374:3374 Corelib.Init.Logic <> ::type_scope:'~'_x not
+R3365:3370 project_coda_BOUROTTE.ex1 <> :::x_'⊢c'_x not
+R3363:3364 Stdlib.Lists.List ListNotations ::list_scope:'['_']' not
+R3371:3373 project_coda_BOUROTTE.ex1 <> bot constr
+R3430:3432 Corelib.Init.Datatypes <> nat ind
+binder 3428:3428 <> n:45
+R3438:3441 Corelib.Init.Logic <> True ind
+R3430:3432 Corelib.Init.Datatypes <> nat ind
+binder 3428:3428 <> n:46
+R3438:3441 Corelib.Init.Logic <> True ind
+R3457:3462 project_coda_BOUROTTE.ex1 <> interp def
+R3466:3468 project_coda_BOUROTTE.ex1 <> bot constr
+R3457:3462 project_coda_BOUROTTE.ex1 <> interp def
+R3466:3468 project_coda_BOUROTTE.ex1 <> bot constr
+R3483:3491 project_coda_BOUROTTE.ex1 <> soundness thm
+R3495:3496 Stdlib.Lists.List ListNotations ::list_scope:'['_']' not
+R3498:3500 project_coda_BOUROTTE.ex1 <> bot constr
+R3483:3491 project_coda_BOUROTTE.ex1 <> soundness thm
+R3495:3496 Stdlib.Lists.List ListNotations ::list_scope:'['_']' not
+R3498:3500 project_coda_BOUROTTE.ex1 <> bot constr
+prf 3557:3578 <> constructive_soundness
+binder 3580:3580 <> M:47
+binder 3582:3582 <> A:48
+R3589:3592 project_coda_BOUROTTE.ex1 <> form ind
+binder 3585:3585 <> s:49
+R3605:3608 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3598:3603 project_coda_BOUROTTE.ex1 <> :::x_'⊢c'_x not
+R3597:3597 project_coda_BOUROTTE.ex1 <> A:48 var
+R3604:3604 project_coda_BOUROTTE.ex1 <> s:49 var
+R3623:3626 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3609:3618 project_coda_BOUROTTE.ex1 <> ctx_interp def
+R3620:3620 project_coda_BOUROTTE.ex1 <> M:47 var
+R3622:3622 project_coda_BOUROTTE.ex1 <> A:48 var
+R3627:3627 Corelib.Init.Logic <> ::type_scope:'~'_x not
+R3628:3628 Corelib.Init.Logic <> ::type_scope:'~'_x not
+R3629:3634 project_coda_BOUROTTE.ex1 <> interp def
+R3636:3636 project_coda_BOUROTTE.ex1 <> M:47 var
+R3638:3638 project_coda_BOUROTTE.ex1 <> s:49 var
+R3724:3729 project_coda_BOUROTTE.ex1 <> in_hyp thm
+R3724:3729 project_coda_BOUROTTE.ex1 <> in_hyp thm
+prf 3838:3861 <> constructive_consistency
+R3865:3868 Corelib.Init.Logic <> ::type_scope:'~'_x not
+R3881:3881 Corelib.Init.Logic <> ::type_scope:'~'_x not
+R3872:3877 project_coda_BOUROTTE.ex1 <> :::x_'⊢c'_x not
+R3869:3871 Stdlib.Lists.List ListNotations ::list_scope:'['_']' not
+R3878:3880 project_coda_BOUROTTE.ex1 <> bot constr
+R3933:3935 Corelib.Init.Datatypes <> nat ind
+binder 3931:3931 <> n:50
+R3941:3944 Corelib.Init.Logic <> True ind
+R3933:3935 Corelib.Init.Datatypes <> nat ind
+binder 3931:3931 <> n:51
+R3941:3944 Corelib.Init.Logic <> True ind
+R3960:3965 project_coda_BOUROTTE.ex1 <> interp def
+R3969:3971 project_coda_BOUROTTE.ex1 <> bot constr
+R3960:3965 project_coda_BOUROTTE.ex1 <> interp def
+R3969:3971 project_coda_BOUROTTE.ex1 <> bot constr
+R3986:4007 project_coda_BOUROTTE.ex1 <> constructive_soundness thm
+R4011:4012 Stdlib.Lists.List ListNotations ::list_scope:'['_']' not
+R4014:4016 project_coda_BOUROTTE.ex1 <> bot constr
+R3986:4007 project_coda_BOUROTTE.ex1 <> constructive_soundness thm
+R4011:4012 Stdlib.Lists.List ListNotations ::list_scope:'['_']' not
+R4014:4016 project_coda_BOUROTTE.ex1 <> bot constr

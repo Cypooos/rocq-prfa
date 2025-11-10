@@ -1,0 +1,18 @@
+
+# Build and run
+
+To build the project :
+- (should not be neccesarry) rebuild the MAKEFILE using `coq_makefile -f _CoqProject -o Makefile`
+- build using `make`
+- open and enjoy !
+
+# Note on answers
+
+**For the question 2.1.h:**
+Since we have proven the consistency of classical logic with `constructive_consistency`.
+"To be equivalent" just means to show it.
+
+**For question 2.2.a (about WModel):**
+We notice that the rules for bot_M(w) are the same as mu_M(w,x) for a fixed value of x.
+This comes from the fact that without the exfalso rule, the bot is just a variable.
+We will threfore interpret bot as var 0 in the model, and all variable as var S x.
