@@ -9,8 +9,8 @@ Reserved Notation "A ⊢ae s" (at level 70).
 
 (* Definition *)
 Inductive cf : list form -> form -> Prop :=
-  | cf_imp : forall s A t, cf (s :: A) t -> cf A (s ~> t)
-  | ae_cf : forall s t, ae s t -> cf s t
+  | cf_imp s A t: cf (s :: A) t -> cf A (s ~> t)
+  | ae_cf s t: ae s t -> cf s t
 with ae : list form -> form -> Prop :=
   | ae_cut s t A: ae A (s ~> t) -> cf A s -> ae A t
   | ae_ax s A: In s A -> ae A s
@@ -43,6 +43,12 @@ Proof.
     (P0 := fun A s => fun (_:ae A s) => Pae A s); firstorder.
   destruct Hgoal. firstorder.
 Qed. 
+
+Lemma ae_ind_better : forall (P : list form -> form -> Prop),
+ (forall s t A, ae A (s ~> t) -> P A (s ~> t) -> cf A s -> P A t) ->
+ (forall s A, In s A -> P A s) ->
+ forall A s, ae A s -> P A s.
+Admitted.
 
 (* Lemma 1: weakening *)
 Lemma cfae_weak A s : (A ⊢cf s -> forall B, incl A B -> B ⊢cf s) /\ (A ⊢ae s -> forall B, incl A B -> B ⊢ae s).
@@ -124,23 +130,25 @@ Proof.
   firstorder.
 Qed.
 
-(* Theorem 4: cut elimination *)
-Theorem cut_elimination A s: (forall M w, ctx_winterp M w A -> winterp M w s) -> A ⊢cf s.
+(* Theorem 4: cut elimination. We proove the real one, not the one as stated (which doesn't need soundness) *)
+Theorem cut_elimination A s: A ⊢m s -> A ⊢cf s.
 Proof.
   intros H.
-  apply correctness.
-  apply (H cf_syntatic_model A).
-  apply cf_refl.
+  apply wsoundness with (M := cf_syntatic_model) (w := A) in H.
+  - apply correctness. exact H.
+  - apply cf_refl.
 Qed.
 
-(* Lemma 5: We need to use 'remember' *)
+(* Lemma 5: We need to use 'remember' and revert to be sure to have the shape *)
+(* of the goal accesible. *)
 Lemma no_ae s : ~ ([] ⊢ae s).
 Proof.
   intros h.
   remember [] as A eqn: Heq.
+  revert Heq.
   induction h as [| s A H].
   - tauto.
-  - rewrite Heq in H. exact H.
+  - intro Heq. rewrite Heq in H. exact H.
 Qed.
 
 (* The recursive function: *)
@@ -152,6 +160,24 @@ end.
 Notation "A '-->' s" := (long_arrow A s) (at level 60).
 
 (* Lemma 6 *)
-Lemma meow A : ~([neg (neg (var 0))] ⊢ae A --> (var 0)).
+Lemma nns_A_la_s A : ~([neg (neg (var 0))] ⊢ae A --> (var 0)).
 Proof.
-  intros h. induction h as [] in A |-*.
+  intros h.
+  remember [neg (neg (var 0))] as AL eqn: HeqAL.
+  remember (A --> var 0) as Avar eqn: HeqAvar.
+  revert HeqAL.
+  revert HeqAvar.
+  induction h as [s t A' Hst Hs IH | ] in A |-*. 
+  - 
+Admitted.
+
+Theorem dne_consistency : ~(forall s, [] ⊢m neg (neg s) ~> s).
+Proof.
+  intros h.
+  specialize h with (var 0).
+  apply cut_elimination in h.
+  inversion h as [s A t h' | s t H ].
+  - inversion h' as [|Idc Idc2 Useful].
+    apply (nns_A_la_s []). exact Useful.
+  - apply no_ae in H. assumption.
+Qed.
