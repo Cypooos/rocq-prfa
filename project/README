@@ -16,3 +16,26 @@ Since we have proven the consistency of classical logic with `constructive_consi
 We notice that the rules for bot_M(w) are the same as mu_M(w,x) for a fixed value of x.
 This comes from the fact that without the exfalso rule, the bot is just a variable.
 We will threfore interpret bot as var 0 in the model, and all variable as var S x.
+
+**For the Part 3:**
+I create my (not dependant) induction principle called `cfae_ind` from `cf_ae_ind`.
+I prooved it. Here it is:
+```
+Lemma cfae_ind :
+  forall (Pcf: list form -> form -> Prop) (Pae: list form -> form -> Prop),
+
+    (forall (s : form) (A : list form) (t : form), cf (s::A) t -> Pcf (s::A) t -> Pcf A (s ~> t)) ->
+    (forall (A : list form) (s : form), ae A s -> Pae A s -> Pcf A s) ->
+    (forall (s t : form) (A : list form), ae A (s ~> t) -> Pae A (s ~> t) -> cf A s -> Pcf A s -> Pae A t) ->
+    (forall (s : form) (A : list form), In s A -> Pae A s) ->
+  forall A s, (cf A s -> Pcf A s) /\ (ae A s -> Pae A s).
+```
+It makes proof way easier since `P` isn't dependant on the proof of `c:cf A s` (which for most cases we don't care about).
+Instead of `induction H as [...].` I can use:
+```
+apply cfae_ind with
+    (Pcf := fun A s => forall B, incl A B -> cf B s)
+    (Pae := fun A s => forall B, incl A B -> ae B s)
+;intros [...].
+```
+which in my opinion is way more understandable.
