@@ -7,7 +7,7 @@ Inductive form : Type :=
 Print In.
 Print incl.
 Notation "s ~> t" := (imp s t) ( at level 51, right associativity).
-Notation neg s := ( imp s bot).
+Notation neg s := (s ~> bot).
 Reserved Notation "A ⊢c s" (at level 70).
 
 (* Q 1.1.a *)

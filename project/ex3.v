@@ -44,12 +44,6 @@ Proof.
   destruct Hgoal. firstorder.
 Qed. 
 
-Lemma ae_ind_better : forall (P : list form -> form -> Prop),
- (forall s t A, ae A (s ~> t) -> P A (s ~> t) -> cf A s -> P A t) ->
- (forall s A, In s A -> P A s) ->
- forall A s, ae A s -> P A s.
-Admitted.
-
 (* Lemma 1: weakening *)
 Lemma cfae_weak A s : (A ⊢cf s -> forall B, incl A B -> B ⊢cf s) /\ (A ⊢ae s -> forall B, incl A B -> B ⊢ae s).
 Proof.
@@ -162,14 +156,7 @@ Notation "A '-->' s" := (long_arrow A s) (at level 60).
 (* Lemma 6 *)
 Lemma nns_A_la_s A : ~([neg (neg (var 0))] ⊢ae A --> (var 0)).
 Proof.
-  intros h.
-  remember [neg (neg (var 0))] as AL eqn: HeqAL.
-  remember (A --> var 0) as Avar eqn: HeqAvar.
-  revert HeqAL.
-  revert HeqAvar.
-  induction h as [s t A' Hst Hs IH | ] in A |-*. 
-  - 
-Admitted.
+  induction s in A |-*.
 
 Theorem dne_consistency : ~(forall s, [] ⊢m neg (neg s) ~> s).
 Proof.

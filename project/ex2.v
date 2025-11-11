@@ -146,11 +146,18 @@ Qed.
 (* Q 2.1.i *)
 Definition dne s := (( s ~> bot) ~> bot) ~> s.
 
-
-
-Lemma consistency_of_dne s : ~( [ ] ⊢m dne s ~> bot).
+Lemma consistency_of_dne s : ~( [] ⊢m dne s ~> bot).
 Proof.
-Admitted.
+  intro h.
+  assert (HdneC : [] ⊢c dne s). {
+    apply ndc_imp_i.
+    apply ndc_abs.
+    apply ndc_imp_e with (s := neg s); apply ndc_ax; firstorder.
+  }
+  apply Implication in h.
+  apply constructive_consistency.
+  apply ndc_imp_e with (s:= dne s); assumption.
+Qed.
 
 (* Q 2.2.a *)
 (* Notice how "bot" just act as a specific variable. With this in mind, let var 0 = bot, and other var will be interpreted as S x *)
@@ -330,4 +337,4 @@ Proof.
   apply H.
   apply wmodel_incl.
   apply incl_refl.
-Qed. 
+Qed.
