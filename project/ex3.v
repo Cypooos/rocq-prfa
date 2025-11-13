@@ -24,7 +24,8 @@ Scheme cf_ind_mut := Induction for cf Sort Prop
 with ae_ind_mut := Induction for ae Sort Prop.
 Combined Scheme cf_ae_ind from cf_ind_mut, ae_ind_mut.
 
-(* Not dependant easier to use induction principle *)
+(* I create my own not-dependant induction principle. *)
+(* Notice how P doesn't take a `cf l f`: in most cases we don't need the witness of the proof. *)
 Lemma cfae_ind :
   forall (Pcf: list form -> form -> Prop) (Pae: list form -> form -> Prop),
 
@@ -56,6 +57,7 @@ Proof.
   - apply ae_ax. firstorder.
 Qed.
 
+(* I then split the mutually recursive `cfae_weak` proof in 2 weakening proofs for cf and ae. *)
 Lemma cf_weak A A' s : incl A A' -> A ⊢cf s -> A' ⊢cf s.
 Proof.
   intros Hinc Acf. 
@@ -70,7 +72,7 @@ Proof.
   apply H;assumption.
 Qed.
 
-(* cut-free syntatic model *)
+(* The cut-free syntatic model *)
 Definition cf_syntatic_model : WModel.
 Proof.
   refine {|
@@ -83,7 +85,7 @@ Proof.
   - intros w w' [|k] Hincl Hw; apply cfae_weak with (A:=w); assumption.
 Defined.
 
-(* Lemma 2 : correctness *)
+(* Lemma 2 : correctness. *)
 Lemma correctness A s : (winterp cf_syntatic_model A s -> A ⊢cf s) /\ (A ⊢ae s -> winterp cf_syntatic_model A s).
 Proof.
   generalize A. induction s as [k | | s IHs t IHt].
@@ -108,7 +110,7 @@ Proof.
 Qed.
 
 (* Lemma 3 : reflexivity *)
-(* We prove a generalization to all variable A' that contains A *)
+(* I first proove a generalization to all variable A' that contains A like asked *)
 Lemma cf_incl A A': incl A A' -> ctx_winterp cf_syntatic_model A' A.
 Proof.
   induction A as [| x l Hl].
@@ -118,13 +120,14 @@ Proof.
     + apply Hl. firstorder.
 Qed.  
 
+(* And just apply it! *)
 Lemma cf_refl A : ctx_winterp cf_syntatic_model A A.
 Proof.
   apply cf_incl.
   firstorder.
 Qed.
 
-(* Theorem 4: cut elimination. We proove the real one, not the one as stated (which doesn't need soundness) *)
+(* Theorem 4: cut elimination. I prooved the real one, not the one as stated (which doesn't need soundness but the proof says it needed it) *)
 Theorem cut_elimination A s: A ⊢m s -> A ⊢cf s.
 Proof.
   intros H.
@@ -153,11 +156,12 @@ end.
 
 Notation "A '-->' s" := (long_arrow A s) (at level 60).
 
-(* Lemma 6 *)
+(* Lemma 6: I didn't understood the proof on paper. *)
 Lemma nns_A_la_s A : ~([neg (neg (var 0))] ⊢ae A --> (var 0)).
 Proof.
-  induction s in A |-*.
+Admitted.
 
+(* Theorem 7 *)
 Theorem dne_consistency : ~(forall s, [] ⊢m neg (neg s) ~> s).
 Proof.
   intros h.

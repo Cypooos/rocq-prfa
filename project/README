@@ -1,25 +1,43 @@
+Project by _Coda Bourotte_
 
 # Build and run
 
 To build the project :
-- (should not be neccesarry) rebuild the MAKEFILE using `coq_makefile -f _CoqProject -o Makefile`
+- (on nixos, run the shell with `nix.shell` with `nix-shell ./shell.nix` and it will install all you need)
+- (should not be neccessary) rebuild the MAKEFILE using `coq_makefile -f _CoqProject -o Makefile`
 - build using `make`
 - open and enjoy !
 
+**About the code:**
+Every file import all the previous ones. Every solution is marked with the comment `(* Q X.Y.Z *)` indicating what the following code is a solution for. I didn't use any form of dark magic, as I waanted to make the code as close as a paper proof as possible. I used quite extensively `; apply ndm_ax; firstorder.` for the simple cases. I did my best to always name the assumptions I use if needed, and even give them meaningful names (Hincl, Hx, Hground etc...) 
+
+# About
+
+**Discussions**
+I havn't discussed the project in of itself with anyone. I have helped my roomate Florent Ferrari to understand what a Kripke model is (as I knew already what it was before the project) and same thing for the SKI / Hilbert's proof system, but at the time I havn't started yet on the project and we never discussed any proofs (I have no idea what we would be prooving). 
+
+**About Me**
+While I have worked with proof assistants before, and even created a CoC one in rust, I don't think I want to do research in computer-assisted proofs. I'm more focused on the theoretical aspect of logic, lambda calculus, graph theory, infinite structures and formal langages, without a need to formalise my work (at least, in the near future!). Still, I learned quite a lot in this course and the fact that I was about to do it at my own rythm was wonderful! I really thank you and I'm sure that the ressources that you showed me will actually be long lasting and I will probably come back on the course webpage in the future if I need more ressources.
+
 # Note on answers
 
-**For the question 2.1.h:**
-Since we have proven the consistency of classical logic with `constructive_consistency`.
-"To be equivalent" just means to show it.
+I have done the part 1, 2, 3 and 4.1. I have not done Lemma 6 of part 3, as I didn't understood the paper proof.
 
-**For question 2.2.a (about WModel):**
+Everything I did went veru smoothly, expect for question **2.1.i**, before I realised the negation was provable in classical logic.
+
+**For the question 2.1.h:**
+Since we have proven the consistency of classical logic with `constructive_consistency`, "to be equivalent" just means to show it.
+
+**For question 2.2.a (about the definition of a WModel):**
 We notice that the rules for bot_M(w) are the same as mu_M(w,x) for a fixed value of x.
-This comes from the fact that without the exfalso rule, the bot is just a variable.
-We will threfore interpret bot as var 0 in the model, and all variable as var S x.
+This comes from the fact that without the exfalso rule, the bot act just like a variable in minimal logic.
+We will threfore interpret bot as var 0 in the model, and all variable as var (S x).
+This reduce the definition, simplyfy proof (as the var case and the bot case are usually the same) and doesn't add complexity.
 
 **For the Part 3:**
 I create my (not dependant) induction principle called `cfae_ind` from `cf_ae_ind`.
-I prooved it. Here it is:
+We didn't really needcedd it but I also kinda wanted to test and see to make the rest of the code more readable.
+I proved it. Here it is:
 ```
 Lemma cfae_ind :
   forall (Pcf: list form -> form -> Prop) (Pae: list form -> form -> Prop),
@@ -38,4 +56,6 @@ apply cfae_ind with
     (Pae := fun A s => forall B, incl A B -> ae B s)
 ;intros [...].
 ```
-which in my opinion is way more understandable.
+which in my opinion is more understandable.
+
+I only used it in one proof, that being weakening. I didn't manage to make `induction (...) using cfae_ind` works as it's not an induction with a valid shape, I just used apply.

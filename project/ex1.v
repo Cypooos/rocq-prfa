@@ -59,7 +59,7 @@ Proof.
 Qed.
 
 (* Q 1.1.d *)
-Fixpoint ground (s:form) : Prop := match s with (* Why a predicate? It's very decidable :eyes: *)
+Fixpoint ground (s:form) : Prop := match s with
  | var _ => False
  | bot => True
  | imp x y => ground x /\ ground y
@@ -67,7 +67,6 @@ Fixpoint ground (s:form) : Prop := match s with (* Why a predicate? It's very de
 
 
 (* Part 1.2 *)
-
 Definition model := nat -> Prop.
 
 (* Q 1.2.a *)
@@ -125,7 +124,7 @@ Qed.
 Lemma constructive_consistency : ~ ( [ ] ⊢c bot).
 Proof.
     intros Hcont.
-    assert (M := fun (n:nat) => True).
+    assert (M := fun (n:nat) => True). (* We define a simple model to apply soundness on (any one would do) *)
     change (interp M bot).
     apply (constructive_soundness M [] bot Hcont).
     - constructor.

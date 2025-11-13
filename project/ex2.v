@@ -4,7 +4,7 @@ Require Import ex1.
 
 Reserved Notation "A ⊢m s" (at level 70).
 
-(* Q 2.1.a *)
+(* Q 2.1.a, Definitions *)
 Inductive ndm : list form -> form -> Prop := 
  | ndm_ax : forall l:list form, forall a:form, In a l -> ndm l a
  | ndm_imp_i : forall l:list form, forall s t:form, ndm (s::l) t -> ndm l (imp s t)
@@ -12,7 +12,7 @@ Inductive ndm : list form -> form -> Prop :=
 
 Notation "A ⊢m t" := (ndm A t).
 
-(* Q 2.1.b : we copy the proof for ndc without a case *)
+(* Q 2.1.b : we copy the proof for ndc with one less case *)
 Lemma Weakm A B s : A ⊢m s -> incl A B -> B ⊢m s.
 Proof.
     intros h. generalize B as B'. induction h as [l a H | l s t H Hind| l s t h1 IH1 h2 IH2].
@@ -25,7 +25,7 @@ Proof.
       + apply IH2. apply Hincl.
 Qed.
 
-(* Q 2.1.c *)
+(* Q 2.1.c, we inject one in the other. *)
 Lemma Implication A s : A ⊢m s -> A ⊢c s.
 Proof.
     intros h. induction h as [ | |].
@@ -42,7 +42,8 @@ Fixpoint trans (t s:form) := match s with
 end.
 
 
-(* Q 2.1.e *)
+(* Q 2.1.e. This lemma show that the double implication "commutes" with the implication *)
+(* We will use it to go through our implication and manage to apply our induction hyothesis. *)
 Lemma ndm_imp_comm_dbl A a b t : ((a ~> b) ~> t) ~>t :: A ⊢m ((a ~> t) ~> t) ~> ((b ~> t) ~> t).
 Proof.
   apply ndm_imp_i.
@@ -55,7 +56,7 @@ Proof.
   apply ndm_imp_e with (s := a); apply ndm_ax; firstorder.
 Qed.
 
-
+(* We proceed by induction on s, *)
 Lemma DNE_Friedman A s t : A ⊢m (( trans t s ~> t) ~> t) ~> (trans t s).
 Proof.
     apply ndm_imp_i.
@@ -63,7 +64,7 @@ Proof.
     - simpl. apply ndm_imp_i. apply ndm_imp_e with (s := (((var k ~> t) ~> t) ~> t)). 
       + apply ndm_imp_i. apply ndm_imp_e with (s := (var k ~> t)); apply ndm_ax; firstorder.
       + apply ndm_ax; firstorder.
-    - simpl. apply ndm_imp_e with (s := (t ~> t)).
+    - simpl. apply ndm_imp_e with (s := (t ~> t)). (* The first two cases are the same*)
       + apply ndm_imp_i. apply ndm_ax. firstorder.
       + apply ndm_ax. firstorder.
     - simpl. apply ndm_imp_i. apply ndm_imp_e with (s := ((trans t y ~> t) ~> t)).
@@ -71,7 +72,7 @@ Proof.
         apply ndm_imp_e with (s:= trans t y). 2: apply ndm_ax; firstorder.
         apply ndm_imp_e with (s:= ((trans t x ~> t) ~> t) ~> ((trans t y ~> t) ~> t)).
         * apply Weakm with (A:= [((trans t x ~> trans t y) ~> t) ~> t]).
-          1: apply ndm_imp_comm_dbl.
+          1: apply ndm_imp_comm_dbl. (* The lemma is used here *)
           firstorder.
         * apply ndm_imp_i.
           apply ndm_imp_e with (s:= ((trans t y ~> t) ~> t)).
@@ -84,11 +85,11 @@ Proof.
           ** apply ndm_imp_i.
              apply Weakm with (A:= ((trans t y) ~> t) ~> t :: A).
              2:firstorder.
-             exact Hy.
+             exact Hy. (* We don't actually need our induction hypothsis on Hx, only Hy and twice *)
       + apply ndm_imp_i.
         apply Weakm with (A:= ((trans t y) ~> t) ~> t :: A).
         2:firstorder.
-        exact Hy.
+        exact Hy. (* Second use *)
 Qed.
 
 (* Q 2.1.f*)
@@ -131,8 +132,8 @@ Qed.
 
 (* Q 2.1.h *)
 (*
-  This lemma is kind of stupid as we already have proven the consistency of classical logic in constructive_consistency.
-  "To be equivalent" just means to show it:
+  Since we already have proven the consistency of classical logic in constructive_consistency,
+  "To be equivalent" just means to show it.
 *)
 Lemma dne_consistency : ~ ([] ⊢m bot).
 Proof.
@@ -160,7 +161,7 @@ Proof.
 Qed.
 
 (* Q 2.2.a *)
-(* Notice how "bot" just act as a specific variable. With this in mind, let var 0 = bot, and other var will be interpreted as S x *)
+(* Notice how "bot" just act as a specific variable. With this in mind, let re var 0 = bot, and other var will be interpreted as S x *)
 
 Record WModel := {
   ty : Type ;
